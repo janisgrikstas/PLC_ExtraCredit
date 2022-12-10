@@ -199,7 +199,7 @@ A function must be declared before it can be used. this is done by using the `fu
   
 If a function takes in parameters, you must specify the data type and name of each parameter when declaring the function. 
   
-## Denotational Sementatics for Selected Statements
+## Denotational Semantics for Selected Statements
   
  ```
   <switch> -> `isthistrue (` <and> `)` <block> [`ifnot` <block>]
@@ -224,3 +224,105 @@ M_while (dothiswhile (<and>) <block> =, s)
 		else
 		return s  
 ```    
+```
+<expression> -> <term> (`*`| `/` | `%` ) <term> | <term>
+M_e (<expression>, s) == switch(<expression>)
+	case <term>[1] *  <term>[2]:
+		if M_e(<expression>.term[1], s) == error || M_e(<expression>.term[2], s) == error 
+		return error
+		if(M_t(<term[1]>).type != M_t(<term[2]>).type)
+		return error		
+		else return M_t(<term[1]>, s) * M_t (<term[2]>, s)
+	case <term>[1] /  <term>[2]:
+		if M_e(<expression>.term[1], s) == error || M_e(<expression>.term[2], s) == error 
+		return error
+		if(M_t(<term[1]>).type != M_t(<term[2]>).type)
+		return error		
+		else return M_t(<term[1]>, s) / M_t (<term[2]>, s)
+	case <term>[1] %  <term>[2]:
+		if M_e(<expression>.term[1], s) == error || M_e(<expression>.term[2], s) == error 
+		return error
+		if(M_t(<term[1]>).type != M_t(<term[2]>).type)
+		return error		
+		else return M_t(<term[1]>, s) * M_t (<term[2]>, s)
+```
+	
+```
+<term> -> <factor> (`+`| `-`) <factor> | <factor>
+M_t (<term> ,s )==switch(<term>)
+	case <factor>[1] +  <factor>[2]:
+		if M_t(<term>.factor[1], s) == error || M_t(<term>.factor[2], s) == error 
+		return error
+		if(M_t(<factor[1]>).type != M_t(<factor>[2]>).type)
+		return error
+		else return M_f (<factor[1]>, s) + M_f (<factor[2]>, s)
+	case <factor>[1] -  <factor>[2]:
+		if M_t(<term>.factor[1], s) == error || M_t(<term>.factor[2], s) == error 
+		return error
+		if(M_f(<factor[1]>).type != M_f(<factor[2]>).type)
+		return error
+		else return M_f (<factor[1]>, s) - M_f (<factor[2]>, s)
+	
+```
+
+```	
+<factor> -> identifier | `number`| `decimal` | `word` | 
+M_f(<factor>, s) == switch (<factor>)
+	case <var> if VARMAP(<var>, s)==undefined
+		then error
+		else return VARMAP (<var>, s)
+	case <int_lit>
+		return <int_lit>.value
+	case <real_lit>
+		return <real_lit>.value
+	case <word>
+		return <word>.value
+
+```
+	
+```	
+<and> -> <or> `and` <or> | <or>
+M_bool_e (<bool_expression>, s) == switch(<bool_expression>)
+	case <boolterm>[1] *  <boolterm>[2]:
+		if M_bool_e(<bool_expression>.term[1], s) == error || M_e(<bool_expression>.term[2], s) == error 
+		return error		
+		else return M_bool_t(<bool_term[1]>, s) * M_bool_t (<bool_term[2]>, s)
+	case <boolterm>[1] /  <boolterm>[2]:
+		if M_bool_e(<bool_expression>.term[1], s) == error || M_e(<bool_expression>.term[2], s) == error 
+		return error		
+		else return M_bool_t(<bool_term[1]>, s) / M_bool_t (<bool_term[2]>, s)
+	case <boolterm>[1] %  <boolterm>[2]:
+		if M_bool_e(<bool_expression>.term[1], s) == error || M_e(<bool_expression>.term[2], s) == error 
+		return error		
+		else return M_bool_t(<bool_term[1]>, s) % M_bool_t (<bool_term[2]>, s)
+	case <boolterm>
+		if M_bool_e(<bool_expression>.term, s) == error  
+		return error		
+		else return M_bool_t(<bool_term>, s)```	
+```	
+
+```
+M_bool_t (<bool_term> ,s )==switch(<term>)
+	case <bool_factor>[1] +  <bool_factor>[2]:
+		if M_bool_t(<term>.factor[1], s) == error || M_bool_t(<term>.factor[2], s) == error 
+		return error
+		if(M_bool_t(<factor[1]>).type != M_bool_t(<factor>[2]>).type)
+		return error
+		else return M_bool_f (<bool_factor[1]>, s) + M_bool_f (<bool_factor[2]>, s)
+	case <bool_factor>[1] -  <factor>[2]:
+		if M_bool_t(<term>.factor[1], s) == error || M_bool_t(<term>.factor[2], s) == error 
+		return error
+		if(M_bool_t(<factor[1]>).type != M_bool_t(<factor>[2]>).type)
+		return error
+		else return M_bool_f (<bool_factor[1]>, s) - M_bool_f (<bool_factor[2]>, s)
+	case <bool_factor>
+		return M_bool_f(<bool_factor>, s)	
+```	
+
+```	
+<boolean_factor>-> identifier | <yesorno>
+M_bool_f(<fbool_actor>, s) == switch (<factor>)
+	return s```	
+
+```	
+
