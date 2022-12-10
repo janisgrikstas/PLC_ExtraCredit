@@ -194,6 +194,33 @@ The `ifnot` statement must be used after an if statement, and it must also be fo
   }
   ```
 In EZ, a function is a block of code that performs a specific task. Functions can be declared and used in a number of different ways in EZ, but there are a few basic rules that apply to all functions.
+  
 A function must be declared before it can be used. this is done by using the `function` keyword folowed by the name of the function , and the parameter in parentheses.
-If a function takes in parameters, you must specify the data type and name of each parameter when declaring the function.   
+  
+If a function takes in parameters, you must specify the data type and name of each parameter when declaring the function. 
+  
+## Denotational Sementatics for Selected Statements
+  
+ ```
+  <switch> -> `isthistrue (` <and> `)` <block> [`ifnot` <block>]
+M_s(ifthistrue(<and>) <block>[1] ifnot <block>[2], s)
+		if M_b(<and>, s) == error
+		return error
+		if M_b(<and>, s)
+			return M_block(<block>[1], s)
+		else return M_block(<block>[2], s)
+  ```
 
+```
+<while_loop> -> `dothiswhile(` <and> `)` <block> 
+M_while (dothiswhile (<and>) <block> =, s)
+		if M_b(<and>, s) == error
+		return error
+		if M_b(<and>, s)
+			if M_b(<stmt>, s) ==error
+				error
+			else s = M_s(<block>, s)
+			M_while(dothiswhile (<and>) <block> =, s)		
+		else
+		return s  
+```    
