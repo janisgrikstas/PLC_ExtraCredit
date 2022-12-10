@@ -7,10 +7,10 @@ more logical why of describing and declaring language actions.
 
 Some of the notable features of the language include:
 
-Support for a variety of data types, including integer numbers, real numbers, strings, and booleans, with intuitive declarations.
-A wide range of operators for performing arithmetic, logical, and assignment operations
-Control structures for conditional execution and looping
-Built-in support for defining and calling functions
+- Support for a variety of data types, including integer numbers, real numbers, strings, and booleans, with intuitive declarations.
+- A wide range of operators for performing arithmetic, logical, and assignment operations
+- Control structures for conditional execution and looping
+- Built-in support for defining and calling functions
 
 With these features, my programming language is well-suited for a variety of levels of learning, from beginners and intermediate, to programmers dusting off their skills.
 
