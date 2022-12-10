@@ -14,7 +14,7 @@ Built-in support for defining and calling functions
 
 With these features, my programming language is well-suited for a variety of levels of learning, from beginners and intermediate, to programmers dusting off their skills.
 
-## Symbols & Structure Grammars
+## Symbols 
 
 dec_lit ->"[+-]?\\d+\\.\\d+"
 
@@ -86,9 +86,9 @@ declaration_keywords -> `decimal` //double**
 
 ## Syntax Grammar Rules
 
-<program> -> begin<stmt_list>
+<program> -> `begin`<stmt_list>
 
-<stmt_list< -> <stmt> ; | <stmt> ; <stmt_list>
+<stmt_list< -> <stmt> `;` | <stmt> `;` <stmt_list>
 
 <stmt> —> <var_declaration> | <func_declaration> | <assignment> | <expression> | <while_loop> | <switch> | <block>
 
@@ -102,13 +102,13 @@ declaration_keywords -> `decimal` //double**
 
 <term> -> <factor> (`+`| `-`) <factor> | <factor>
 
-<factor> -> identifier |`number_lit`|`yorn_lit` | `word_lit` | `decimal_lit`
+<factor> -> `identifier` |`number_lit`|`yorn_lit` | `word_lit` | `decimal_lit`
 
-<var_declaration> -> declaration_keyword identifier  `;`
+<var_declaration> -> `declaration_keyword` `identifier`  `;`
 
-<assignment> -> identifier `=` <expression> `;`
+<assignment> -> `identifier` `=` <expression> `;`
 
-<func_declaration> -> `function` identifier `(` <parameter> `)` <block>
+<func_declaration> -> `function` `identifier` `(` <parameter> `)` <block>
 
 <and> -> <or> `and` <or> | <or>
 
@@ -122,6 +122,63 @@ declaration_keywords -> `decimal` //double**
 
 <boolean_term> -> <boolean_factor> (`+`|`-`) <boolean_factor> | <boolean_factor>
 
-<boolean_factor>-> identifier |`number_lit`|`yorn_lit` | `word_lit` | `decimal_lit`
+<boolean_factor>-> `identifier` |`number_lit`|`yorn_lit` | `word_lit` | `decimal_lit`
 
 
+
+## Literals
+### Word Rules
+```
+Word word_name = "hello" ;
+```
+In EZ, a string is an object that represents a sequence of characters.
+
+A string must be enclosed in double quotes (").
+A string can contain any number of characters, including numbers and special characters.
+Strings are case-sensitive, so "hello" and "Hello" are considered to be different strings.
+
+### Number & Decimal Rules
+
+```
+Number number_name = 1 ;
+```
+```
+Decimal decimal_name = 1.5 ;
+```
+Arithmetic operations: The basic arithmetic operations (addition, subtraction, multiplication, and
+division) work slightly differently for number and decimal values. For number values, these operations will
+always result in an integer value, with any decimal part of the result being truncated. For decimal 
+values, these operations will always result in a decimal value, with any decimal part of the result being preserved.
+
+Type conversion: When an number value is assigned to a decimal variable, or vice versa, the value will 
+be automatically converted to the appropriate data type. This is called type conversion, and it is 
+done automatically by the EZ compiler. For example, Number a = 5; Decimal b = a; will assign the 
+value 5 to the number variable a, and then convert that value to a decimal and assign it to the decimal variable b.
+
+Precision: double values have greater precision than int values, meaning that they can represent 
+a wider range of numbers with greater accuracy. This can be useful when working with decimal values, 
+but it can also lead to rounding errors if the precision of a double value is not sufficient to represent a number accurately.
+
+
+### YesOrNo Rules
+```
+YesOrNo yorn_name = true ;
+```
+In EZ, a boolean is a data type that can have one of two possible values: true or false. It is commonly used to represent a condition that can either be true or false. For example, you might use a boolean to represent whether a certain condition has been met, or to represent whether a user has entered a valid input.
+
+A YesOrNo must be declared before it can be used. This is done using the `YesOrNo` keyword, followed by the name of the YesOrNo variable. 
+
+The value of a boolean can be checked using an `isthistrue` statement. More information on this structure can be found in Structure Rules section
+
+Two booleans can be combined using the `and` and `or` operators.
+## Structure Rules
+
+### Control Structure Rules
+
+In EZ, an `ifthisistrue` statement is used to execute a block of code only if a specified condition is true. An else statement can be used in conjunction with an if statement to execute a different block of code if the condition is false.
+
+The if statement must be followed by a condition in parentheses. This condition can be any expression that evaluates to a YesOrNo value (i.e. true or false).
+The code to be executed if the condition is true must be enclosed in curly braces. 
+
+The else statement must be used after an if statement, and it must also be followed by a condition in parentheses. This condition is the opposite of the condition in the if statement. For example:
+### Function Rules
