@@ -174,7 +174,13 @@ Two booleans can be combined using the `and` and `or` operators.
 ## Structure Rules
 
 ### Control Structure Rules
-
+```
+  isthistrue ( varone is= 123 ) {
+  //code to be executed
+  } ifnot {
+  //code to be executed
+  }
+``` 
 In EZ, an `isthistrue` statement is used to execute a block of code only if a specified condition is true. An `ifnot` statement can be used in conjunction with an if statement to execute a different block of code if the condition is false.
 
 The `isthistrue` statement must be followed by a condition in parentheses. This condition can be any expression that evaluates to a YesOrNo value (i.e. true or false).
