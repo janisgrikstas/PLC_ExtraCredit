@@ -175,10 +175,20 @@ Two booleans can be combined using the `and` and `or` operators.
 
 ### Control Structure Rules
 
-In EZ, an `ifthisistrue` statement is used to execute a block of code only if a specified condition is true. An else statement can be used in conjunction with an if statement to execute a different block of code if the condition is false.
+In EZ, an `isthistrue` statement is used to execute a block of code only if a specified condition is true. An `ifnot` statement can be used in conjunction with an if statement to execute a different block of code if the condition is false.
 
-The if statement must be followed by a condition in parentheses. This condition can be any expression that evaluates to a YesOrNo value (i.e. true or false).
+The `isthistrue` statement must be followed by a condition in parentheses. This condition can be any expression that evaluates to a YesOrNo value (i.e. true or false).
 The code to be executed if the condition is true must be enclosed in curly braces. 
 
-The else statement must be used after an if statement, and it must also be followed by a condition in parentheses. This condition is the opposite of the condition in the if statement. For example:
+The `ifnot` statement must be used after an if statement, and it must also be followed by a condition in parentheses. This condition is the opposite of the condition in the if statement.
 ### Function Rules
+  ```
+  function function_ name ( Number num ) {
+  //code to be executed
+  }
+  ```
+In EZ, a function is a block of code that performs a specific task. Functions can be declared and used in a number of different ways in EZ, but there are a few basic rules that apply to all functions.
+A function must be declared before it can be used. this is done by using the `function` keyword folowed by the name of the function , and the parameter in parentheses.
+
+  
+
