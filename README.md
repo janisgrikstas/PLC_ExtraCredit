@@ -189,6 +189,5 @@ The `ifnot` statement must be used after an if statement, and it must also be fo
   ```
 In EZ, a function is a block of code that performs a specific task. Functions can be declared and used in a number of different ways in EZ, but there are a few basic rules that apply to all functions.
 A function must be declared before it can be used. this is done by using the `function` keyword folowed by the name of the function , and the parameter in parentheses.
-
-  
+If a function takes in parameters, you must specify the data type and name of each parameter when declaring the function.   
 
