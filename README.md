@@ -129,7 +129,7 @@ declaration_keywords -> `decimal` //double**
 ## Literals
 ### Word Rules
 ```
-Word word_name = "hello" ;
+word word_name = "hello" ;
 ```
 In EZ, a string is an object that represents a sequence of characters.
 
@@ -140,10 +140,10 @@ Strings are case-sensitive, so "hello" and "Hello" are considered to be differen
 ### Number & Decimal Rules
 
 ```
-Number number_name = 1 ;
+number number_name = 1 ;
 ```
 ```
-Decimal decimal_name = 1.5 ;
+decimal decimal_name = 1.5 ;
 ```
 Arithmetic operations: The basic arithmetic operations (addition, subtraction, multiplication, and
 division) work slightly differently for number and decimal values. For number values, these operations will
@@ -162,11 +162,11 @@ but it can also lead to rounding errors if the precision of a double value is no
 
 ### YesOrNo Rules
 ```
-YesOrNo yorn_name = true ;
+yesorno yorn_name = true ;
 ```
 In EZ, a boolean is a data type that can have one of two possible values: true or false. It is commonly used to represent a condition that can either be true or false. For example, you might use a boolean to represent whether a certain condition has been met, or to represent whether a user has entered a valid input.
 
-A YesOrNo must be declared before it can be used. This is done using the `YesOrNo` keyword, followed by the name of the YesOrNo variable. 
+A yesorno must be declared before it can be used. This is done using the `YesOrNo` keyword, followed by the name of the YesOrNo variable. 
 
 The value of a boolean can be checked using an `isthistrue` statement. More information on this structure can be found in Structure Rules section
 
@@ -271,10 +271,10 @@ M_f(<factor>, s) == switch (<factor>)
 	case <var> if VARMAP(<var>, s)==undefined
 		then error
 		else return VARMAP (<var>, s)
-	case <int_lit>
-		return <int_lit>.value
-	case <real_lit>
-		return <real_lit>.value
+	case <num_lit>
+		return <num_lit>.value
+	case <dec_lit>
+		return <dec_lit>.value
 	case <word>
 		return <word>.value
 
