@@ -1,0 +1,10 @@
+begin 
+function funtion ( ) { 
+number easyvar = 3 ; 
+} 
+isthistrue ( varone is= 123 ) { 
+  varone = 123 ; 
+  } ifnot { 
+  varone = 123 ; 
+  } 
+  
