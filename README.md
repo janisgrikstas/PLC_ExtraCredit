@@ -218,7 +218,22 @@ In EZ, a function is a block of code that performs a specific task. Functions ca
 A function must be declared before it can be used. this is done by using the `function` keyword folowed by the name of the function , and the parameter in parentheses.
   
 If a function takes in parameters, you must specify the data type and name of each parameter when declaring the function. 
-  
+
+### Comments
+
+In EZ, there is one way to write comments in your code so that the compiler ignores. Comments should start with `ignoreuntil` your comment text and then `untilhere`
+
+```
+ignoreuntil
+comment text
+untilhere
+
+begin
+funtion fun_ction ( )  {
+
+}
+```
+
 ## Denotational Semantics for Selected Statements
   
  ```
