@@ -87,58 +87,58 @@ declaration_keywords -> `decimal` //double**
 ## Syntax Grammar Rules
 
 
-<program> -> `begin`<stmt_list>
+<program>-> `begin`<stmt_list>
 
 
-<stmt_list< -> <stmt> `;` | <stmt> `;` <stmt_list>
+<stmt_list>-> <stmt> `;` | <stmt> `;` <stmt_list>
 
 
-<stmt> —> <var_declaration> | <func_declaration> | <assignment> | <expression> | <while_loop> | <switch> | <block>
+<stmt>—> <var_declaration> | <func_declaration> | <assignment> | <expression> | <while_loop> | <switch> | <block>
 
 
-<block> -> `{` <stmt> `}`
+<block>-> `{` <stmt> `}`
 
 
-<while_loop> -> `dothiswhile(` <and> `)` <block> 
+<while_loop>-> `dothiswhile(` <and> `)` <block> 
 
 
-<switch> -> `isthistrue (` <and> `)` <block> [`ifnot` <block>]
+<switch>-> `isthistrue (` <and> `)` <block> [`ifnot` <block>]
 
 
-<expression> -> <term> (`*`| `/` | `%` ) <term> | <term>
+<expression>-> <term> (`*`| `/` | `%` ) <term> | <term>
 
 
-<term> -> <factor> (`+`| `-`) <factor> | <factor>
+<term>-> <factor> (`+`| `-`) <factor> | <factor>
 
 
-<factor> -> `identifier` |`number_lit`|`yorn_lit` | `word_lit` | `decimal_lit`
+<factor>-> `identifier` |`number_lit`|`yorn_lit` | `word_lit` | `decimal_lit`
 
 
-<var_declaration> -> `declaration_keyword` `identifier`  `;`
+<var_declaration>-> `declaration_keyword` `identifier`  `;`
 
 
-<assignment> -> `identifier` `=` <expression> `;`
+<assignment>-> `identifier` `=` <expression> `;`
 
 
-<func_declaration> -> `function` `identifier` `(` <parameter> `)` <block>
+<func_declaration>-> `function` `identifier` `(` <parameter> `)` <block>
 
 
-<and> -> <or> `and` <or> | <or>
+<and>-> <or> `and` <or> | <or>
 
 
-<or> -> <check_if_equal>  `or` <check_if_equal> | <check_if_equals>
+<or>-> <check_if_equal>  `or` <check_if_equal> | <check_if_equals>
 
 
-<check_if_equal> -> <check_value> (`not=`|`is=`) <check_value> | <check_value>
+<check_if_equal>-> <check_value> (`not=`|`is=`) <check_value> | <check_value>
 
 
-<check_value> -> <boolean_expression> (`<=`|`>=`|`<`|`>`) <boolean_expression> | <boolean_expression>
+<check_value>-> <boolean_expression> (`<=`|`>=`|`<`|`>`) <boolean_expression> | <boolean_expression>
 
 
-<boolean_expression> -> <boolean_term> (`*`|`/`|`%`) <boolean_term> | <boolean_term>
+<boolean_expression>-> <boolean_term> (`*`|`/`|`%`) <boolean_term> | <boolean_term>
 
 
-<boolean_term> -> <boolean_factor> (`+`|`-`) <boolean_factor> | <boolean_factor>
+<boolean_term>-> <boolean_factor> (`+`|`-`) <boolean_factor> | <boolean_factor>
 
 
 <boolean_factor>-> `identifier` |`number_lit`|`yorn_lit` | `word_lit` | `decimal_lit`
