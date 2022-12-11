@@ -191,6 +191,11 @@ A yesorno must be declared before it can be used. This is done using the `YesOrN
 The value of a boolean can be checked using an `isthistrue` statement. More information on this structure can be found in Structure Rules section
 
 Two booleans can be combined using the `and` and `or` operators.
+
+### Miscellaneous Attribute Grammar Rules
+- If a yesorno is assigned to a number variable, the value will be either 1 or 0 (true == 1, false == 0)
+- If subtraction is performed on a word, the word will be truncated the number of characters.
+- Any other type assigned outside of the declared type will result in semantic error.
 ## Structure Rules
 
 ### Control Structure Rules
