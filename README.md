@@ -86,7 +86,7 @@ declaration_keywords -> `decimal` //double**
 
 ## Syntax Grammar Rules
 
-
+```
 <program>-> `begin`<stmt_list>
 
 
@@ -143,7 +143,7 @@ declaration_keywords -> `decimal` //double**
 
 <boolean_factor>-> `identifier` |`number_lit`|`yorn_lit` | `word_lit` | `decimal_lit`
 
-
+```
 
 
 ## Literals
