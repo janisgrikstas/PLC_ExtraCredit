@@ -86,43 +86,63 @@ declaration_keywords -> `decimal` //double**
 
 ## Syntax Grammar Rules
 
+
 <program> -> `begin`<stmt_list>
+
 
 <stmt_list< -> <stmt> `;` | <stmt> `;` <stmt_list>
 
+
 <stmt> —> <var_declaration> | <func_declaration> | <assignment> | <expression> | <while_loop> | <switch> | <block>
+
 
 <block> -> `{` <stmt> `}`
 
+
 <while_loop> -> `dothiswhile(` <and> `)` <block> 
+
 
 <switch> -> `isthistrue (` <and> `)` <block> [`ifnot` <block>]
 
+
 <expression> -> <term> (`*`| `/` | `%` ) <term> | <term>
+
 
 <term> -> <factor> (`+`| `-`) <factor> | <factor>
 
+
 <factor> -> `identifier` |`number_lit`|`yorn_lit` | `word_lit` | `decimal_lit`
+
 
 <var_declaration> -> `declaration_keyword` `identifier`  `;`
 
+
 <assignment> -> `identifier` `=` <expression> `;`
+
 
 <func_declaration> -> `function` `identifier` `(` <parameter> `)` <block>
 
+
 <and> -> <or> `and` <or> | <or>
+
 
 <or> -> <check_if_equal>  `or` <check_if_equal> | <check_if_equals>
 
+
 <check_if_equal> -> <check_value> (`not=`|`is=`) <check_value> | <check_value>
+
 
 <check_value> -> <boolean_expression> (`<=`|`>=`|`<`|`>`) <boolean_expression> | <boolean_expression>
 
+
 <boolean_expression> -> <boolean_term> (`*`|`/`|`%`) <boolean_term> | <boolean_term>
+
 
 <boolean_term> -> <boolean_factor> (`+`|`-`) <boolean_factor> | <boolean_factor>
 
+
 <boolean_factor>-> `identifier` |`number_lit`|`yorn_lit` | `word_lit` | `decimal_lit`
+
 
 
 
