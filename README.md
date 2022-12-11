@@ -207,6 +207,16 @@ The `isthistrue` statement must be followed by a condition in parentheses. This 
 The code to be executed if the condition is true must be enclosed in curly braces. 
 
 The `ifnot` statement must be used after an if statement, and it must also be followed by a condition in parentheses. This condition is the opposite of the condition in the if statement.
+
+```
+dothiswhile ( varone is= 123 ) {
+//code to execute
+}
+```
+`dothiswhile` is a control flow statement that executes a block of code while a boolean condition is true. The condition must be a boolean expression, i.e., it must evaluate to either true or false. The condition must be placed inside the parentheses () following the while keyword.
+
+The code to be executed in the loop body must be placed inside the braces {} following the condition. The loop body can contain any valid EZ statements
+
 ### Function Rules
   ```
   function function_ name ( Number num ) {
