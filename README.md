@@ -151,11 +151,11 @@ declaration_keywords -> `decimal` //double**
 ```
 word word_name = "hello" ;
 ```
-In EZ, a string is an object that represents a sequence of characters.
+In EZ, a word is an object that represents a sequence of characters.
 
-A string must be enclosed in double quotes (").
-A string can contain any number of characters, including numbers and special characters.
-Strings are case-sensitive, so "hello" and "Hello" are considered to be different strings.
+A word must be enclosed in double quotes (").
+A word can contain any number of characters, including numbers and special characters.
+Words are case-sensitive, so "hello" and "Hello" are considered to be different words.
 
 ### Number & Decimal Rules
 
@@ -175,20 +175,20 @@ be automatically converted to the appropriate data type. This is called type con
 done automatically by the EZ compiler. For example, Number a = 5; Decimal b = a; will assign the 
 value 5 to the number variable a, and then convert that value to a decimal and assign it to the decimal variable b.
 
-Precision: double values have greater precision than int values, meaning that they can represent 
+Precision: decimal values have greater precision than number values, meaning that they can represent 
 a wider range of numbers with greater accuracy. This can be useful when working with decimal values, 
-but it can also lead to rounding errors if the precision of a double value is not sufficient to represent a number accurately.
+but it can also lead to rounding errors if the precision of a decimal value is not sufficient to represent a number accurately.
 
 
 ### YesOrNo Rules
 ```
 yesorno yorn_name = true ;
 ```
-In EZ, a boolean is a data type that can have one of two possible values: true or false. It is commonly used to represent a condition that can either be true or false. For example, you might use a boolean to represent whether a certain condition has been met, or to represent whether a user has entered a valid input.
+In EZ, a yesorno is a data type that can have one of two possible values: true or false. It is commonly used to represent a condition that can either be true or false. For example, you might use a yesorno to represent whether a certain condition has been met, or to represent whether a user has entered a valid input.
 
 A yesorno must be declared before it can be used. This is done using the `YesOrNo` keyword, followed by the name of the YesOrNo variable. 
 
-The value of a boolean can be checked using an `isthistrue` statement. More information on this structure can be found in Structure Rules section
+The value of a yesorno can be checked using an `isthistrue` statement. More information on this structure can be found in Structure Rules section
 
 Two booleans can be combined using the `and` and `or` operators.
 
@@ -218,7 +218,7 @@ dothiswhile ( varone is= 123 ) {
 //code to execute
 }
 ```
-`dothiswhile` is a control flow statement that executes a block of code while a boolean condition is true. The condition must be a boolean expression, i.e., it must evaluate to either true or false. The condition must be placed inside the parentheses () following the while keyword.
+`dothiswhile` is a control flow statement that executes a block of code while a yesorno condition is true. The condition must be a yesorno expression, i.e., it must evaluate to either true or false. The condition must be placed inside the parentheses () following the while keyword.
 
 The code to be executed in the loop body must be placed inside the braces {} following the condition. The loop body can contain any valid EZ statements
 
